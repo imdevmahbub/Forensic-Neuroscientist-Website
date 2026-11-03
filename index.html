@@ -1,0 +1,1310 @@
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forensic Neuroscience Training Academy | The Forensic Neuroscientist</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#25AEF3',
+              orange: '#F7930A',
+              dark: '#070C18',
+              surface: '#0D1527',
+              surfaceLight: '#142038',
+              border: 'rgba(37, 174, 243, 0.15)',
+              borderOrange: 'rgba(247, 147, 10, 0.2)'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif']
+          },
+          boxShadow: {
+            'cyan-glow': '0 0 35px -5px rgba(37, 174, 243, 0.35)',
+            'orange-glow': '0 0 35px -5px rgba(247, 147, 10, 0.35)',
+            'dual-glow': '0 10px 40px -10px rgba(37, 174, 243, 0.25), 0 -10px 40px -10px rgba(247, 147, 10, 0.2)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070C18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1b2944;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #25AEF3;
+    }
+
+    /* Dual Gradient Text */
+    .gradient-text-dual {
+      background: linear-gradient(135deg, #25AEF3 0%, #FFFFFF 50%, #F7930A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-text-cyan {
+      background: linear-gradient(135deg, #25AEF3 0%, #90dcff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-text-orange {
+      background: linear-gradient(135deg, #F7930A 0%, #ffc06e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Subtle Animated Grid Background */
+    .neuro-grid {
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(37, 174, 243, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(247, 147, 10, 0.06) 0%, transparent 40%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+
+    /* Pulsing Synapse effect */
+    @keyframes pulse-slow {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+    .animate-synapse {
+      animation: pulse-slow 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-cyan/20 selection:text-brand-cyan overflow-x-hidden">
+
+  <!-- ==================== DESKTOP FIXED SIDEBAR ==================== -->
+  <aside id="desktop-sidebar" class="hidden lg:flex flex-col fixed inset-y-0 left-0 w-72 bg-brand-dark/95 border-r border-slate-800/80 backdrop-blur-xl z-50 transition-all duration-300">
+    <!-- Brand Logo -->
+    <div class="p-6 border-b border-slate-800/80 flex flex-col items-center text-center">
+      <a href="#hero" class="group flex flex-col items-center">
+        <div class="relative w-36 py-2 transition-transform duration-300 group-hover:scale-105">
+          <img src="https://i.postimg.cc/Zqb7np2J/logo-removebg-preview.png" alt="Forensic Neuroscience Training Academy" class="w-full object-contain filter drop-shadow-[0_4px_12px_rgba(37,174,243,0.3)]">
+        </div>
+        <span class="mt-2 text-[10px] uppercase font-bold tracking-[0.25em] text-slate-400 group-hover:text-brand-cyan transition-colors">
+          The Forensic Neuroscientist
+        </span>
+      </a>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto" id="sidebar-nav">
+      <a href="#hero" class="nav-link flex items-center gap-3.5 px-4 py-3 text-sm font-medium rounded-xl text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20 transition-all">
+        <i class="fa-solid fa-brain-circuit w-5 text-center text-brand-cyan"></i>
+        <span>Home</span>
+      </a>
+      <a href="#introduction" class="nav-link flex items-center gap-3.5 px-4 py-3 text-sm font-medium rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/50 transition-all">
+        <i class="fa-solid fa-circle-play w-5 text-center"></i>
+        <span>Meet The Expert</span>
+      </a>
+      <a href="#about" class="nav-link flex items-center gap-3.5 px-4 py-3 text-sm font-medium rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/50 transition-all">
+        <i class="fa-solid fa-dna w-5 text-center"></i>
+        <span>Our Mission</span>
+      </a>
+      <a href="#services" class="nav-link flex items-center gap-3.5 px-4 py-3 text-sm font-medium rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/50 transition-all">
+        <i class="fa-solid fa-scale-balanced w-5 text-center"></i>
+        <span>Services & Training</span>
+      </a>
+      <a href="#education" class="nav-link flex items-center gap-3.5 px-4 py-3 text-sm font-medium rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/50 transition-all">
+        <i class="fa-solid fa-microscope w-5 text-center"></i>
+        <span>Brain & Behavior</span>
+      </a>
+      <a href="#videos" class="nav-link flex items-center gap-3.5 px-4 py-3 text-sm font-medium rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/50 transition-all">
+        <i class="fa-brands fa-youtube w-5 text-center text-red-400"></i>
+        <span>Video Lectures</span>
+      </a>
+      <a href="#contact" class="nav-link flex items-center gap-3.5 px-4 py-3 text-sm font-medium rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/50 transition-all">
+        <i class="fa-solid fa-gavel w-5 text-center text-brand-orange"></i>
+        <span>Consultation</span>
+      </a>
+    </nav>
+
+    <!-- Sidebar Bottom Action -->
+    <div class="p-4 border-t border-slate-800/80 bg-slate-900/40">
+      <div class="p-3.5 rounded-xl bg-gradient-to-br from-brand-surface to-brand-surfaceLight border border-slate-700/60 shadow-lg text-center">
+        <div class="flex items-center justify-center gap-2 mb-2 text-xs font-semibold text-brand-orange">
+          <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+          Accepting Legal Case Reviews
+        </div>
+        <p class="text-xs text-slate-400 mb-3">Litigation, courtroom testimony & CLE certifications</p>
+        <a href="#contact" class="block w-full py-2.5 px-3 rounded-lg text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-brand-cyan to-blue-600 hover:from-cyan-400 hover:to-brand-cyan transition-all shadow-md shadow-brand-cyan/20">
+          Book Case Review
+        </a>
+      </div>
+      <div class="mt-3 flex items-center justify-center gap-4 text-slate-400 text-sm">
+        <a href="https://www.youtube.com/@TheForensicNeuroscientist" target="_blank" rel="noopener" class="hover:text-red-500 transition-colors" title="YouTube Channel">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="#contact" class="hover:text-brand-cyan transition-colors" title="Encrypted Inquiries">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="#about" class="hover:text-brand-orange transition-colors" title="Academic Credentials">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== MOBILE & TABLET TOP HEADER ==================== -->
+  <header class="lg:hidden sticky top-0 z-40 bg-brand-dark/95 border-b border-slate-800/80 backdrop-blur-md px-4 py-3 flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-2">
+      <img src="https://i.postimg.cc/Zqb7np2J/logo-removebg-preview.png" alt="Forensic Neuroscience Training Academy" class="h-9 object-contain">
+      <div class="flex flex-col">
+        <span class="font-display font-bold text-xs leading-tight text-white tracking-wide uppercase">Forensic Neuroscience</span>
+        <span class="text-[9px] text-brand-cyan font-semibold tracking-wider">Training Academy</span>
+      </div>
+    </a>
+    <div class="flex items-center gap-2">
+      <a href="#contact" class="py-1.5 px-3 rounded-lg text-xs font-semibold bg-brand-orange text-white shadow-sm shadow-brand-orange/40 hover:bg-orange-500">
+        Inquire
+      </a>
+      <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Collapsible Menu Drawer -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden lg:hidden">
+    <div class="fixed inset-y-0 right-0 w-72 bg-brand-dark border-l border-slate-800 p-6 flex flex-col justify-between shadow-2xl">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+          <span class="font-display font-bold text-sm text-brand-cyan">NAVIGATION</span>
+          <button id="close-mobile-menu" class="p-1 text-slate-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+          </button>
+        </div>
+        <nav class="mt-6 space-y-2">
+          <a href="#hero" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan font-medium">Home</a>
+          <a href="#introduction" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan font-medium">Meet the Neuroscientist</a>
+          <a href="#about" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan font-medium">Academy Mission</a>
+          <a href="#services" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan font-medium">Services & CLE Training</a>
+          <a href="#education" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan font-medium">Brain Science & Law</a>
+          <a href="#videos" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan font-medium">Featured Lectures</a>
+          <a href="#contact" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-brand-orange hover:bg-brand-orange/10 font-medium">Consultation & Contact</a>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-slate-800 text-center">
+        <a href="#contact" class="mobile-nav-link block w-full py-3 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-orange text-white font-bold text-sm uppercase tracking-wider">
+          Schedule Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+  <main class="lg:pl-72 flex-1 min-h-screen">
+
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section id="hero" class="relative min-h-[92vh] flex items-center neuro-grid overflow-hidden px-6 lg:px-12 py-16">
+      <!-- Glow ambient backdrops -->
+      <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-cyan/15 rounded-full blur-[120px] pointer-events-none"></div>
+      <div class="absolute top-1/2 -right-32 w-96 h-96 bg-brand-orange/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        
+        <!-- Hero Left Column: Copy & CTAs -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs font-semibold">
+            <span class="inline-block w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+            <span class="text-slate-300">Pioneering Forensic Neuroscience & Medical Jurisprudence</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl xl:text-6xl font-display font-extrabold tracking-tight leading-[1.12]">
+            Understanding the Brain. <br>
+            <span class="gradient-text-cyan">Informing Justice.</span> <br>
+            <span class="gradient-text-orange">Advancing Knowledge.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+            Bridging cutting-edge clinical neurobiology, neural imaging, and criminal jurisprudence. Providing specialized expert witness consultations, judicial education, and accredited forensic training to dissect complex behavior in the courtroom.
+          </p>
+
+          <!-- Dual CTAs -->
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="#services" class="px-7 py-3.5 rounded-xl font-bold text-sm tracking-wide text-white bg-gradient-to-r from-brand-cyan to-blue-600 hover:from-cyan-400 hover:to-brand-cyan shadow-cyan-glow transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
+              <span>Explore Our Services</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+
+            <button onclick="openVideoModal('uGySNlWnPRk')" class="px-6 py-3.5 rounded-xl font-semibold text-sm tracking-wide text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 hover:border-brand-orange/60 transition-all duration-300 flex items-center gap-3 group">
+              <span class="w-8 h-8 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              </span>
+              <span>Watch Introduction</span>
+            </button>
+          </div>
+
+          <!-- Trust Badges / Stats Strip -->
+          <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4">
+            <div>
+              <div class="font-display text-2xl font-bold text-brand-cyan">500+</div>
+              <div class="text-xs text-slate-400 mt-0.5">Forensic Case Analyses</div>
+            </div>
+            <div>
+              <div class="font-display text-2xl font-bold text-white">100%</div>
+              <div class="text-xs text-slate-400 mt-0.5">Peer-Reviewed Science</div>
+            </div>
+            <div>
+              <div class="font-display text-2xl font-bold text-brand-orange">CLE & CME</div>
+              <div class="text-xs text-slate-400 mt-0.5">Accredited Academy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: 3D Scientific Brain Interactive Canvas -->
+        <div class="lg:col-span-5 relative flex items-center justify-center">
+          <div class="relative w-full max-w-[420px] aspect-square rounded-3xl bg-gradient-to-tr from-brand-surface via-slate-900 to-brand-surfaceLight p-1 border border-slate-700/60 shadow-dual-glow">
+            
+            <!-- Canvas Container -->
+            <div class="relative w-full h-full rounded-[22px] overflow-hidden bg-brand-dark flex flex-col items-center justify-center">
+              <canvas id="synapse-canvas" class="w-full h-full absolute inset-0"></canvas>
+              
+              <!-- Floating Anatomical Badges -->
+              <div class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-brand-dark/80 border border-brand-cyan/40 backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
+                <span class="text-[10px] font-mono tracking-wider text-brand-cyan uppercase">Left: Analytical Culpability</span>
+              </div>
+              <div class="absolute bottom-4 right-4 z-10 px-3 py-1 rounded-full bg-brand-dark/80 border border-brand-orange/40 backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+                <span class="text-[10px] font-mono tracking-wider text-brand-orange uppercase">Right: Behavioral Volition</span>
+              </div>
+
+              <!-- Central Brain Graphic Accent -->
+              <div class="relative z-10 pointer-events-none p-6 text-center animate-synapse">
+                <img src="https://i.postimg.cc/Zqb7np2J/logo-removebg-preview.png" alt="Brain Diagram" class="w-44 h-44 object-contain filter drop-shadow-[0_0_25px_rgba(37,174,243,0.45)] mx-auto opacity-90">
+                <p class="text-[11px] font-mono text-slate-400 mt-2 bg-slate-900/90 px-3 py-1 rounded-full border border-slate-800 inline-block">
+                  <i class="fa-solid fa-wave-square text-brand-cyan mr-1"></i> Interactive Synaptic Map
+                </p>
+              </div>
+            </div>
+
+            <!-- Decorative corner brackets -->
+            <div class="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-brand-cyan rounded-tl"></div>
+            <div class="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-brand-orange rounded-br"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. MEET THE FORENSIC NEUROSCIENTIST (INTRODUCTION VIDEO SECTION) ==================== -->
+    <section id="introduction" class="py-20 px-6 lg:px-12 bg-slate-950/70 border-y border-slate-800/80 relative">
+      <div class="max-w-5xl mx-auto">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-brand-cyan uppercase mb-2">
+            <i class="fa-solid fa-play-circle text-brand-orange"></i>
+            Academy Introduction
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+            Meet the Forensic Neuroscientist
+          </h2>
+          <p class="text-sm sm:text-base text-slate-400 mt-3">
+            An overview of how neural imaging, behavioral psychopathology, and traumatic brain injury evidence transform courtroom deliberations.
+          </p>
+        </div>
+
+        <!-- Video Cinema Frame: Loaded only once -->
+        <div class="relative rounded-2xl overflow-hidden border border-slate-700/80 bg-brand-surface shadow-2xl group" >
+          <div class="aspect-video w-full relative">
+            <iframe 
+              id="intro-video-frame"
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/uGySNlWnPRk?enablejsapi=1&rel=0" 
+              title="Forensic Neuroscience Training Academy Introduction" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Video Details Strip -->
+          <div class="p-6 bg-slate-900/90 border-t border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+              <span class="inline-block px-2.5 py-1 text-[11px] font-bold uppercase rounded bg-brand-cyan/20 text-brand-cyan mb-1.5">Keynote Presentation</span>
+              <h3 class="text-lg font-bold text-white">The Neural Architecture of Intent and Criminal Culpability</h3>
+              <p class="text-xs text-slate-400 mt-1">Official introduction to the curriculum, case analysis methodology, and expert testimony frameworks.</p>
+            </div>
+            <a href="https://www.youtube.com/@TheForensicNeuroscientist" target="_blank" rel="noopener" class="shrink-0 px-5 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase text-white bg-red-600 hover:bg-red-700 transition-colors flex items-center gap-2 shadow-md">
+              <i class="fa-brands fa-youtube text-base"></i>
+              Subscribe to Channel
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 3. ABOUT SECTION ==================== -->
+    <section id="about" class="py-24 px-6 lg:px-12 relative overflow-hidden">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- About Visual: Scientific Concept -->
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="relative rounded-2xl bg-gradient-to-br from-brand-surface via-slate-900 to-brand-surfaceLight p-6 border border-slate-700/80 shadow-cyan-glow">
+            <div class="space-y-4">
+              <!-- Visual Card 1: Rigorous Methodology -->
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-brand-cyan/15 text-brand-cyan flex items-center justify-center shrink-0 text-xl">
+                  <i class="fa-solid fa-chart-network"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Quantitative Neuroimaging</h4>
+                  <p class="text-xs text-slate-400 mt-1">fMRI, PET, and structural DTI track analysis translated into Daubert-standard admissible evidence.</p>
+                </div>
+              </div>
+
+              <!-- Visual Card 2: Legal Translation -->
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-brand-orange/15 text-brand-orange flex items-center justify-center shrink-0 text-xl">
+                  <i class="fa-solid fa-gavel"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Forensic Legal Translation</h4>
+                  <p class="text-xs text-slate-400 mt-1">Transforming abstract neurological biomarkers into clear, objective juror-comprehensible explanations.</p>
+                </div>
+              </div>
+
+              <!-- Visual Card 3: Ethics & Neutrality -->
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0 text-xl">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Uncompromising Scientific Neutrality</h4>
+                  <p class="text-xs text-slate-400 mt-1">Evidence-based analysis serving defense, prosecution, and judicial panels without partisan bias.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Quote Box -->
+            <div class="mt-6 p-4 rounded-xl bg-gradient-to-r from-brand-cyan/10 to-brand-orange/10 border border-slate-700 text-xs text-slate-300 italic">
+              "The courtroom requires more than data; it requires the meticulous translation of cognitive dysfunction into the legal parameters of intent and capability."
+            </div>
+          </div>
+        </div>
+
+        <!-- About Text Info -->
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+          <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-brand-orange uppercase">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Academy Mission & Pedagogy
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+            Where Neuroscience Meets the Law with Unassailable Precision
+          </h2>
+
+          <p class="text-slate-300 text-base leading-relaxed">
+            The <strong class="text-white">Forensic Neuroscience Training Academy</strong> was established to eliminate the dangerous gap between rapid neurological discovery and the judicial system. Attorneys, judges, and mental health clinicians frequently encounter high-stakes disputes involving Traumatic Brain Injury (TBI), neurodegenerative deterioration, and executive impulse dysfunction.
+          </p>
+
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Led by seasoned forensic practitioners, we offer specialized continuing legal education (CLE), bespoke trial preparation, and forensic evaluation. Our curriculum is grounded in peer-reviewed scientific literature, ensuring that every claim meets the highest evidentiary thresholds of reliability and validity.
+          </p>
+
+          <div class="pt-4 flex flex-wrap gap-3">
+            <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-xs font-medium text-slate-200">
+              <i class="fa-solid fa-check text-brand-cyan mr-1.5"></i>Criminal Culpability
+            </span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-xs font-medium text-slate-200">
+              <i class="fa-solid fa-check text-brand-cyan mr-1.5"></i>Civil Competency & Torts
+            </span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-xs font-medium text-slate-200">
+              <i class="fa-solid fa-check text-brand-cyan mr-1.5"></i>Daubert / Frye Motions
+            </span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-xs font-medium text-slate-200">
+              <i class="fa-solid fa-check text-brand-orange mr-1.5"></i>Mitigation & Sentencing
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. SERVICES SECTION ==================== -->
+    <section id="services" class="py-24 px-6 lg:px-12 bg-slate-950/60 border-t border-slate-800/80 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-brand-cyan uppercase mb-2">
+            <i class="fa-solid fa-cubes-stacked"></i>
+            Core Offerings
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+            Comprehensive Forensic Neuroscience Solutions
+          </h2>
+          <p class="text-sm sm:text-base text-slate-400 mt-3">
+            Three dedicated pillars designed for litigators, judicial institutions, medical examiners, and academic researchers.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Service Card 1 -->
+          <div class="group relative rounded-2xl bg-brand-surface border border-slate-800 hover:border-brand-cyan/60 p-7 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-brand-cyan/15 text-brand-cyan flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-cyan group-hover:text-white transition-all">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-brand-cyan">Accredited Academy</span>
+              <h3 class="text-xl font-display font-bold text-white mt-1 mb-3">Professional Training & Education</h3>
+              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                Interactive CLE-accredited seminars and hands-on masterclasses covering neuroanatomy, neuromitigation, cross-examination of neuropsychological experts, and courtroom visual demonstratives.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300 mb-6 border-t border-slate-800/80 pt-4">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-brand-cyan text-[10px]"></i>
+                  CLE Credit for Bar Associations
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-brand-cyan text-[10px]"></i>
+                  Neuroscience for Judges & Prosecutors
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-brand-cyan text-[10px]"></i>
+                  Interactive Case Simulation Workshops
+                </li>
+              </ul>
+            </div>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-brand-cyan bg-brand-cyan/10 hover:bg-brand-cyan hover:text-white border border-brand-cyan/20 transition-all">
+              <span>View Training Syllabi</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Service Card 2 (Featured / Orange highlight) -->
+          <div class="group relative rounded-2xl bg-gradient-to-b from-slate-900 to-brand-surface border-2 border-brand-orange/60 p-7 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-orange-glow">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-brand-orange text-white text-[10px] font-extrabold uppercase tracking-widest shadow-md">
+              Most Requested
+            </div>
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all mt-2">
+                <i class="fa-solid fa-microscope"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-brand-orange">Litigation Support</span>
+              <h3 class="text-xl font-display font-bold text-white mt-1 mb-3">Forensic Neuroscience Consultation</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                Objective case merit reviews, independent neurological scans auditing, cross-examination outline synthesis, and admissible courtroom expert testimony across criminal and civil dockets.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-200 mb-6 border-t border-slate-800/80 pt-4">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-brand-orange text-[10px]"></i>
+                  Objective Neuroimaging Audits (MRI/PET)
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-brand-orange text-[10px]"></i>
+                  Diminished Capacity & TBI Assessments
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-brand-orange text-[10px]"></i>
+                  Deposition & Trial Witness Examination
+                </li>
+              </ul>
+            </div>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-brand-orange hover:bg-orange-500 shadow-md shadow-brand-orange/30 transition-all">
+              <span>Request Case Evaluation</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="group relative rounded-2xl bg-brand-surface border border-slate-800 hover:border-brand-cyan/60 p-7 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-brand-cyan/15 text-brand-cyan flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-cyan group-hover:text-white transition-all">
+                <i class="fa-solid fa-book-bookmark"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-brand-cyan">Research Repository</span>
+              <h3 class="text-xl font-display font-bold text-white mt-1 mb-3">Expert Knowledge & Resources</h3>
+              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                Direct access to our curated scientific repositories, appellate brief scientific amicus support, standard-of-proof white papers, and comprehensive legal-neuroscience lexicon databases.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300 mb-6 border-t border-slate-800/80 pt-4">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-brand-cyan text-[10px]"></i>
+                  Evidence-based Legal Brief Templates
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-brand-cyan text-[10px]"></i>
+                  Curated Neuro-Jurisprudence Library
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-brand-cyan text-[10px]"></i>
+                  Monthly Analysis of Landmark Verdicts
+                </li>
+              </ul>
+            </div>
+            <a href="#education" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-brand-cyan bg-brand-cyan/10 hover:bg-brand-cyan hover:text-white border border-brand-cyan/20 transition-all">
+              <span>Access Knowledge Base</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. EDUCATIONAL CONTENT (BRAIN FUNCTION & FORENSIC APPLICATIONS) ==================== -->
+    <section id="education" class="py-24 px-6 lg:px-12 relative overflow-hidden">
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-brand-orange uppercase mb-2">
+              <i class="fa-solid fa-brain"></i>
+              Interactive Scientific Explorer
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+              Brain Function & Forensic Application
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+            Click across core anatomical regions below to investigate how specific brain networks govern impulse regulation, executive capacity, and legal responsibility.
+          </p>
+        </div>
+
+        <!-- Interactive Anatomical Tabs System -->
+        <div class="rounded-2xl bg-brand-surface border border-slate-800 overflow-hidden shadow-2xl">
+          <!-- Tab Buttons -->
+          <div class="grid grid-cols-2 md:grid-cols-4 border-b border-slate-800 text-xs sm:text-sm font-semibold" id="neuro-tabs">
+            <button onclick="switchTab('pfc')" id="tab-btn-pfc" class="py-4 px-3 text-center border-b-2 border-brand-cyan text-brand-cyan bg-slate-900/80 transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-shield-virus"></i>
+              <span>Prefrontal Cortex</span>
+            </button>
+            <button onclick="switchTab('amygdala')" id="tab-btn-amygdala" class="py-4 px-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-bolt-lightning"></i>
+              <span>Amygdala & Rage</span>
+            </button>
+            <button onclick="switchTab('tbi')" id="tab-btn-tbi" class="py-4 px-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-head-side-virus"></i>
+              <span>Traumatic Brain Injury</span>
+            </button>
+            <button onclick="switchTab('daubert')" id="tab-btn-daubert" class="py-4 px-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-scale-unbalanced"></i>
+              <span>Daubert / Admissibility</span>
+            </button>
+          </div>
+
+          <!-- Tab Content Area -->
+          <div class="p-8 lg:p-10" id="neuro-content">
+            
+            <!-- Panel 1: Prefrontal Cortex -->
+            <div id="panel-pfc" class="tab-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7 space-y-4">
+                <span class="inline-block px-2.5 py-1 text-[11px] font-bold uppercase rounded bg-brand-cyan/20 text-brand-cyan">Executive Volition & Impulse Inhibition</span>
+                <h3 class="text-2xl font-display font-bold text-white">The Frontal Lobe: The Seat of Self-Control</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  The dorsolateral and orbitofrontal prefrontal cortices are primarily responsible for future consequence forecasting, emotional suppression, and moral risk appraisal. Lesions, hypoperfusion, or developmental delays directly undermine an individual's capacity to conform conduct to the requirements of the law.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                    <span class="text-xs font-bold text-brand-cyan block">Forensic Question:</span>
+                    <span class="text-xs text-slate-400">Did lesions compromise executive inhibition at the precise moment of the offense?</span>
+                  </div>
+                  <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                    <span class="text-xs font-bold text-brand-orange block">Standard of Proof:</span>
+                    <span class="text-xs text-slate-400">Correlation with neuropsychological metrics (e.g. Wisconsin Card Sort, Stroop).</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 bg-slate-900/90 rounded-xl p-5 border border-slate-800 text-center">
+                <div class="w-20 h-20 mx-auto rounded-full bg-brand-cyan/15 flex items-center justify-center text-brand-cyan text-3xl mb-3">
+                  <i class="fa-solid fa-brain"></i>
+                </div>
+                <div class="font-bold text-white text-sm">Orbitofrontal Circuitry Breakdown</div>
+                <div class="text-xs text-slate-400 mt-1">Implicated in 68% of behavioral mitigation claims involving disinhibition and acute judgment collapse.</div>
+              </div>
+            </div>
+
+            <!-- Panel 2: Amygdala & Rage -->
+            <div id="panel-amygdala" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7 space-y-4">
+                <span class="inline-block px-2.5 py-1 text-[11px] font-bold uppercase rounded bg-red-500/20 text-red-400">Affective Hyper-Reactivity & Threat Perception</span>
+                <h3 class="text-2xl font-display font-bold text-white">The Amygdala and Pathological Violence</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  In reactive homicide and spontaneous violent assault, abnormal basolateral amygdalar sensitivity triggers overwhelming fight-or-flight cascades prior to cortical evaluation. We evaluate whether the subject experienced true affective seizure or provoked autonomic dysregulation versus premeditated calculation.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                    <span class="text-xs font-bold text-red-400 block">Forensic Distinction:</span>
+                    <span class="text-xs text-slate-400">Predatory (instrumental) vs. Impulsive (reactive) aggression mechanisms.</span>
+                  </div>
+                  <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                    <span class="text-xs font-bold text-brand-cyan block">Legal Implication:</span>
+                    <span class="text-xs text-slate-400">Directly impacts 1st-degree premeditation vs. 2nd-degree or manslaughter verdicts.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 bg-slate-900/90 rounded-xl p-5 border border-slate-800 text-center">
+                <div class="w-20 h-20 mx-auto rounded-full bg-red-500/15 flex items-center justify-center text-red-400 text-3xl mb-3">
+                  <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <div class="font-bold text-white text-sm">Limbic System Hijacking</div>
+                <div class="text-xs text-slate-400 mt-1">Establishing objective physiologic evidence of panic-induced cognitive bypass.</div>
+              </div>
+            </div>
+
+            <!-- Panel 3: Traumatic Brain Injury -->
+            <div id="panel-tbi" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7 space-y-4">
+                <span class="inline-block px-2.5 py-1 text-[11px] font-bold uppercase rounded bg-brand-orange/20 text-brand-orange">Diffuse Axonal Injury & Blast Trauma</span>
+                <h3 class="text-2xl font-display font-bold text-white">Traumatic Brain Injury (TBI) in Defense</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Micro-structural axonal shearing rarely registers on standard clinical CT scans. Utilizing advanced DTI (Diffusion Tensor Imaging) and fractional anisotropy, our specialists reveal micro-hemorrhages and sheared white matter tracts that explain catastrophic personality modifications.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                    <span class="text-xs font-bold text-brand-orange block">Appellate Merit:</span>
+                    <span class="text-xs text-slate-400">Ineffective assistance of counsel when prior concussive history was omitted.</span>
+                  </div>
+                  <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                    <span class="text-xs font-bold text-brand-cyan block">Clinical Corroboration:</span>
+                    <span class="text-xs text-slate-400">Correlation with military blast exposure, sports trauma, or domestic abuse.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 bg-slate-900/90 rounded-xl p-5 border border-slate-800 text-center">
+                <div class="w-20 h-20 mx-auto rounded-full bg-brand-orange/15 flex items-center justify-center text-brand-orange text-3xl mb-3">
+                  <i class="fa-solid fa-burst"></i>
+                </div>
+                <div class="font-bold text-white text-sm">Sub-Cortical White Matter Shearing</div>
+                <div class="text-xs text-slate-400 mt-1">Translating micro-trauma into clear evidence of diminished cognitive capacity.</div>
+              </div>
+            </div>
+
+            <!-- Panel 4: Daubert Standards -->
+            <div id="panel-daubert" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7 space-y-4">
+                <span class="inline-block px-2.5 py-1 text-[11px] font-bold uppercase rounded bg-blue-500/20 text-blue-400">Scientific Evidentiary Thresholds</span>
+                <h3 class="text-2xl font-display font-bold text-white">Daubert, Frye & Admissibility Defense</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Courts strictly scrutinize "junk science" neuroimaging. We ensure your scientific testimony satisfies all 5 Daubert prongs: empirical testability, known error rates, peer review publication, professional control standards, and general scientific community acceptance.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                    <span class="text-xs font-bold text-blue-400 block">Motion in Limine Shield:</span>
+                    <span class="text-xs text-slate-400">Defend against opposing motions to exclude vital brain scan visualizations.</span>
+                  </div>
+                  <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                    <span class="text-xs font-bold text-brand-orange block">Cross-Exam Preparation:</span>
+                    <span class="text-xs text-slate-400">Dismantle opposing expert reports lacking recognized normative databases.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 bg-slate-900/90 rounded-xl p-5 border border-slate-800 text-center">
+                <div class="w-20 h-20 mx-auto rounded-full bg-blue-500/15 flex items-center justify-center text-blue-400 text-3xl mb-3">
+                  <i class="fa-solid fa-certificate"></i>
+                </div>
+                <div class="font-bold text-white text-sm">Federal Rule of Evidence 702</div>
+                <div class="text-xs text-slate-400 mt-1">Methodological validation that satisfies the most exacting trial judges.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6. FEATURED YOUTUBE VIDEOS GALLERY ==================== -->
+    <section id="videos" class="py-24 px-6 lg:px-12 bg-slate-950/60 border-t border-slate-800/80 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-red-500 uppercase mb-2">
+              <i class="fa-brands fa-youtube"></i>
+              YouTube Channel Content
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+              Featured Case Studies & Lectures
+            </h2>
+          </div>
+          <a href="https://www.youtube.com/@TheForensicNeuroscientist" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-red-600 hover:bg-red-700 transition-colors inline-flex items-center gap-2.5 shadow-md shadow-red-900/40 w-fit">
+            <span>Explore All Channel Videos</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+          </a>
+        </div>
+
+        <!-- Distinct Video Cards Grid (Different educational lectures from the channel) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Video Card 1 -->
+          <div class="rounded-2xl bg-brand-surface border border-slate-800 overflow-hidden group hover:border-brand-cyan/60 transition-all flex flex-col justify-between">
+            <div>
+              <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openChannelDirect()">
+                <!-- Custom Themed Video Visual -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10"></div>
+                <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-brand-surface via-slate-950 to-brand-surfaceLight group-hover:scale-105 transition-transform duration-500">
+                  <i class="fa-solid fa-brain text-5xl text-brand-cyan/70 mb-2"></i>
+                  <span class="text-xs font-mono uppercase tracking-wider text-slate-300 font-bold">EEG & Insanity Defense</span>
+                </div>
+                
+                <!-- Play Button Overlay -->
+                <div class="absolute inset-0 z-20 flex items-center justify-center">
+                  <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-red-500 transition-all">
+                    <i class="fa-solid fa-play ml-0.5 text-sm"></i>
+                  </div>
+                </div>
+                <div class="absolute bottom-3 right-3 z-20 px-2 py-0.5 rounded bg-black/80 text-[10px] font-mono text-white">
+                  24:18
+                </div>
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase text-brand-cyan">Case Breakdown</span>
+                <h3 class="text-base font-bold text-white mt-1 group-hover:text-brand-cyan transition-colors">
+                  Can an EEG Prove Lack of Mens Rea? Legal Standards Unpacked
+                </h3>
+                <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                  A forensic neuroscientist evaluates how continuous telemetry and sleep-deprived EEGs operate under state legal insanity tests.
+                </p>
+              </div>
+            </div>
+            <div class="px-5 pb-5">
+              <a href="https://www.youtube.com/@TheForensicNeuroscientist" target="_blank" rel="noopener" class="text-xs font-bold text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors">
+                <span>Watch on YouTube</span>
+                <i class="fa-solid fa-angle-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Video Card 2 -->
+          <div class="rounded-2xl bg-brand-surface border border-slate-800 overflow-hidden group hover:border-brand-orange/60 transition-all flex flex-col justify-between">
+            <div>
+              <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openChannelDirect()">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10"></div>
+                <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-brand-surface via-slate-950 to-brand-surfaceLight group-hover:scale-105 transition-transform duration-500">
+                  <i class="fa-solid fa-skull-crossbones text-5xl text-brand-orange/70 mb-2"></i>
+                  <span class="text-xs font-mono uppercase tracking-wider text-slate-300 font-bold">Psychopathy vs. Psychosis</span>
+                </div>
+                
+                <div class="absolute inset-0 z-20 flex items-center justify-center">
+                  <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-red-500 transition-all">
+                    <i class="fa-solid fa-play ml-0.5 text-sm"></i>
+                  </div>
+                </div>
+                <div class="absolute bottom-3 right-3 z-20 px-2 py-0.5 rounded bg-black/80 text-[10px] font-mono text-white">
+                  31:45
+                </div>
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase text-brand-orange">Clinical Jurisprudence</span>
+                <h3 class="text-base font-bold text-white mt-1 group-hover:text-brand-orange transition-colors">
+                  The Neurobiology of Psychopathy: What fMRI Brain Scans Reveal
+                </h3>
+                <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                  Differentiating between antisocial personality neuro-markers and organic cognitive psychosis in capital murder defense proceedings.
+                </p>
+              </div>
+            </div>
+            <div class="px-5 pb-5">
+              <a href="https://www.youtube.com/@TheForensicNeuroscientist" target="_blank" rel="noopener" class="text-xs font-bold text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors">
+                <span>Watch on YouTube</span>
+                <i class="fa-solid fa-angle-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Video Card 3 -->
+          <div class="rounded-2xl bg-brand-surface border border-slate-800 overflow-hidden group hover:border-brand-cyan/60 transition-all flex flex-col justify-between">
+            <div>
+              <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openChannelDirect()">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10"></div>
+                <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-brand-surface via-slate-950 to-brand-surfaceLight group-hover:scale-105 transition-transform duration-500">
+                  <i class="fa-solid fa-microchip text-5xl text-blue-400/70 mb-2"></i>
+                  <span class="text-xs font-mono uppercase tracking-wider text-slate-300 font-bold">Cross-Examining Experts</span>
+                </div>
+                
+                <div class="absolute inset-0 z-20 flex items-center justify-center">
+                  <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-red-500 transition-all">
+                    <i class="fa-solid fa-play ml-0.5 text-sm"></i>
+                  </div>
+                </div>
+                <div class="absolute bottom-3 right-3 z-20 px-2 py-0.5 rounded bg-black/80 text-[10px] font-mono text-white">
+                  18:50
+                </div>
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase text-brand-cyan">Masterclass Preview</span>
+                <h3 class="text-base font-bold text-white mt-1 group-hover:text-brand-cyan transition-colors">
+                  10 Fatal Errors Litigators Make When Cross-Examining Neurologists
+                </h3>
+                <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                  Tactical questioning strategies to dissect statistical baseline flaws, normative group mismatching, and pseudo-scientific brain claims.
+                </p>
+              </div>
+            </div>
+            <div class="px-5 pb-5">
+              <a href="https://www.youtube.com/@TheForensicNeuroscientist" target="_blank" rel="noopener" class="text-xs font-bold text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors">
+                <span>Watch on YouTube</span>
+                <i class="fa-solid fa-angle-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 7. CONTACT & CONSULTATION SECTION ==================== -->
+    <section id="contact" class="py-24 px-6 lg:px-12 relative overflow-hidden">
+      <!-- Glow element -->
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-cyan/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Contact Left Info -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-brand-orange uppercase">
+              <i class="fa-solid fa-shield-halved"></i>
+              Privileged & Confidential
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+              Initiate a Case Evaluation or CLE Inquiry
+            </h2>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              We review prospective criminal, civil, and military defense matters under strict attorney work-product privilege guidelines. Contact our forensic administrative desk to schedule an initial consultation or request academic course bookings.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="w-10 h-10 rounded-lg bg-brand-cyan/15 text-brand-cyan flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Encrypted Forensic Inquiries</div>
+                  <div class="text-sm font-semibold text-white">consult@forensicneuroacademy.com</div>
+                  <div class="text-[11px] text-slate-400 mt-0.5">PGP / End-to-end encrypted protocol supported</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="w-10 h-10 rounded-lg bg-brand-orange/15 text-brand-orange flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Turnaround Time</div>
+                  <div class="text-sm font-semibold text-white">Within 24-48 Business Hours</div>
+                  <div class="text-[11px] text-slate-400 mt-0.5">Expedited reviews available for imminent trial calendar dates</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Jurisdictions Served</div>
+                  <div class="text-sm font-semibold text-white">United States & International Tribunals</div>
+                  <div class="text-[11px] text-slate-400 mt-0.5">Federal, State, Military Courts-Martial, & Appellate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Right: Functional Interactive Form -->
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl bg-brand-surface border border-slate-800 p-8 shadow-2xl relative">
+              <h3 class="text-xl font-display font-bold text-white mb-6">Confidential Evaluation Form</h3>
+              
+              <form id="consultation-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="full-name">Full Name *</label>
+                    <input type="text" id="full-name" required placeholder="Counsel or Investigator Name" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-brand-cyan transition-colors">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="org-name">Law Firm / Institution *</label>
+                    <input type="text" id="org-name" required placeholder="Firm, Court, or University" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-brand-cyan transition-colors">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="email">Professional Email *</label>
+                    <input type="email" id="email" required placeholder="counsel@firm.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-brand-cyan transition-colors">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="case-type">Inquiry Classification *</label>
+                    <select id="case-type" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-brand-cyan transition-colors">
+                      <option value="">Select Category...</option>
+                      <option value="criminal">Criminal Defense / Mitigation</option>
+                      <option value="prosecution">Prosecutorial Consultation</option>
+                      <option value="civil">Civil TBI / Capacity Litigation</option>
+                      <option value="training">CLE / Institutional Academy Training</option>
+                      <option value="media">Academic / Media Inquiry</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="timeline">Current Procedural Stage / Trial Date</label>
+                  <input type="text" id="timeline" placeholder="e.g. Pre-indictment, Daubert hearing in 60 days, Sentencing mitigation" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-brand-cyan transition-colors">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="message">Case Summary / Specific Questions *</label>
+                  <textarea id="message" rows="4" required placeholder="Please outline available neuroimaging, relevant clinical history, or training objectives. Do not include unencrypted sensitive identifiers." class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-brand-cyan transition-colors"></textarea>
+                </div>
+
+                <div class="flex items-center gap-2 pt-1">
+                  <input type="checkbox" id="nda" required class="w-4 h-4 rounded bg-slate-900 border-slate-700 text-brand-cyan focus:ring-0">
+                  <label for="nda" class="text-xs text-slate-400">
+                    I confirm this communication is an initial inquiry and does not alone establish a formal expert retention agreement.
+                  </label>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full py-3.5 px-6 rounded-xl font-bold text-sm uppercase tracking-wider text-white bg-gradient-to-r from-brand-cyan via-blue-600 to-brand-orange hover:opacity-95 shadow-lg transition-all flex items-center justify-center gap-2">
+                  <span>Transmit Confidential Inquiry</span>
+                  <i class="fa-solid fa-lock text-xs"></i>
+                </button>
+              </form>
+
+              <!-- Success Notification Alert -->
+              <div id="form-success" class="hidden absolute inset-0 bg-brand-surface/95 backdrop-blur-md rounded-2xl flex flex-col items-center justify-center p-8 text-center z-20">
+                <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mb-4">
+                  <i class="fa-solid fa-check-double"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white">Inquiry Securely Received</h4>
+                <p class="text-sm text-slate-300 mt-2 max-w-md">
+                  Thank you. Your inquiry has been routed to our forensic intake desk. Our consulting directors will review case particulars and reach out via your indicated encrypted channel.
+                </p>
+                <button onclick="resetForm()" class="mt-6 px-6 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white">
+                  Send Another Inquiry
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 8. MULTI-COLUMN FOOTER ==================== -->
+    <footer class="bg-black/80 border-t border-slate-800/80 pt-16 pb-12 px-6 lg:px-12 text-slate-400 text-xs">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+          
+          <!-- Brand Column -->
+          <div class="lg:col-span-2 space-y-4">
+            <a href="#hero" class="flex items-center gap-3">
+              <img src="https://i.postimg.cc/Zqb7np2J/logo-removebg-preview.png" alt="Forensic Neuroscience Academy" class="h-10 object-contain">
+              <div>
+                <span class="block font-display font-bold text-white text-sm tracking-wide uppercase">Forensic Neuroscience</span>
+                <span class="block text-[10px] text-brand-cyan font-bold tracking-wider uppercase">Training Academy</span>
+              </div>
+            </a>
+            <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+              The premier institution dedicated to demystifying the brain for justice systems globally. Scientific objectivity, courtroom rigor, and evidence-grounded education.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+              <a href="https://www.youtube.com/@TheForensicNeuroscientist" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-red-500 hover:border-red-500/40 flex items-center justify-center transition-colors" title="YouTube">
+                <i class="fa-brands fa-youtube text-sm"></i>
+              </a>
+              <a href="#contact" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-brand-cyan hover:border-brand-cyan/40 flex items-center justify-center transition-colors" title="Encrypted Email">
+                <i class="fa-solid fa-envelope text-sm"></i>
+              </a>
+              <a href="#about" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-brand-orange hover:border-brand-orange/40 flex items-center justify-center transition-colors" title="Scientific Credentials">
+                <i class="fa-solid fa-award text-sm"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div>
+            <h4 class="font-display font-bold text-white uppercase tracking-wider text-xs mb-4">Academy</h4>
+            <ul class="space-y-2.5">
+              <li><a href="#hero" class="hover:text-brand-cyan transition-colors">Home</a></li>
+              <li><a href="#introduction" class="hover:text-brand-cyan transition-colors">Meet The Neuroscientist</a></li>
+              <li><a href="#about" class="hover:text-brand-cyan transition-colors">Mission & Ethics</a></li>
+              <li><a href="#education" class="hover:text-brand-cyan transition-colors">Brain & Behavior</a></li>
+              <li><a href="#videos" class="hover:text-brand-cyan transition-colors">YouTube Gallery</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="font-display font-bold text-white uppercase tracking-wider text-xs mb-4">Specialties</h4>
+            <ul class="space-y-2.5">
+              <li><a href="#services" class="hover:text-brand-orange transition-colors">CLE Masterclasses</a></li>
+              <li><a href="#services" class="hover:text-brand-orange transition-colors">Case Merit Auditing</a></li>
+              <li><a href="#services" class="hover:text-brand-orange transition-colors">fMRI / PET Interpretation</a></li>
+              <li><a href="#education" class="hover:text-brand-orange transition-colors">Daubert Preparation</a></li>
+              <li><a href="#contact" class="hover:text-brand-orange transition-colors">Expert Witness Testimony</a></li>
+            </ul>
+          </div>
+
+          <!-- Official Channel -->
+          <div>
+            <h4 class="font-display font-bold text-white uppercase tracking-wider text-xs mb-4">Broadcasts</h4>
+            <p class="text-[11px] text-slate-400 mb-3">Watch in-depth legal-scientific video analyses on our YouTube channel.</p>
+            <a href="https://www.youtube.com/@TheForensicNeuroscientist" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-red-600/20 text-red-400 border border-red-500/30 hover:bg-red-600 hover:text-white transition-all text-xs font-semibold">
+              <i class="fa-brands fa-youtube"></i>
+              <span>@TheForensicNeuroscientist</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Legal Disclaimer & Copyright -->
+        <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+          <p>© <span id="current-year"></span> Forensic Neuroscience Training Academy. All rights reserved. Developed by Md. Mahbubur Rahman.</p>
+          <div class="flex items-center gap-6">
+            <span>Privileged Attorney Work-Product Standards</span>
+            <span>Daubert & Frye Compliant</span>
+            <a href="#hero" class="text-brand-cyan hover:underline">Back to top ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ==================== INTERACTIVE VIDEO MODAL ==================== -->
+  <div id="video-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="relative w-full max-w-4xl bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+      <div class="p-4 bg-slate-900 flex items-center justify-between border-b border-slate-800">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-cyan flex items-center gap-2">
+          <i class="fa-solid fa-play"></i> Forensic Neuroscience Academy Preview
+        </span>
+        <button onclick="closeVideoModal()" class="text-slate-400 hover:text-white text-lg p-1">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="aspect-video w-full">
+        <iframe id="modal-iframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // 1. Current Year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // 2. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function toggleMobileMenu(open) {
+      if (open) {
+        mobileMenu.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', () => toggleMobileMenu(true));
+    if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', () => toggleMobileMenu(false));
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => toggleMobileMenu(false));
+    });
+
+    // 3. Educational Anatomical Tabs Switcher
+    function switchTab(tabId) {
+      // Buttons reset
+      const tabs = ['pfc', 'amygdala', 'tbi', 'daubert'];
+      tabs.forEach(id => {
+        const btn = document.getElementById(`tab-btn-${id}`);
+        const panel = document.getElementById(`panel-${id}`);
+        if (id === tabId) {
+          btn.className = 'py-4 px-3 text-center border-b-2 border-brand-cyan text-brand-cyan bg-slate-900/80 transition-all flex items-center justify-center gap-2';
+          panel.classList.remove('hidden');
+        } else {
+          btn.className = 'py-4 px-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all flex items-center justify-center gap-2';
+          panel.classList.add('hidden');
+        }
+      });
+    }
+
+    // 4. Video Modal Handlers
+    const videoModal = document.getElementById('video-modal');
+    const modalIframe = document.getElementById('modal-iframe');
+
+    function openVideoModal(videoId) {
+      modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      videoModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+      modalIframe.src = '';
+      videoModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    if (videoModal) {
+      videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) closeVideoModal();
+      });
+    }
+
+    function openChannelDirect() {
+      window.open('https://www.youtube.com/@TheForensicNeuroscientist', '_blank');
+    }
+
+    // 5. Interactive Form Submission
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('consultation-form');
+      const successBox = document.getElementById('form-success');
+      
+      // Simulate secure transmission
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Encrypting & Sending...';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        submitBtn.innerHTML = '<span>Transmit Confidential Inquiry</span> <i class="fa-solid fa-lock text-xs"></i>';
+        submitBtn.disabled = false;
+        successBox.classList.remove('hidden');
+      }, 900);
+    }
+
+    function resetForm() {
+      document.getElementById('consultation-form').reset();
+      document.getElementById('form-success').classList.add('hidden');
+    }
+
+    // 6. Interactive Synapse Particle Network (Canvas)
+    const canvas = document.getElementById('synapse-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+
+      function resizeCanvas() {
+        width = canvas.parentElement.clientWidth;
+        height = canvas.parentElement.clientHeight;
+        canvas.width = width;
+        canvas.height = height;
+        initParticles();
+      }
+
+      function initParticles() {
+        particles = [];
+        const count = Math.floor((width * height) / 5000);
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.7,
+            vy: (Math.random() - 0.5) * 0.7,
+            radius: Math.random() * 2 + 1.2,
+            // 50% Cyan, 50% Orange to match the brain hemisphere branding
+            color: Math.random() > 0.5 ? '#25AEF3' : '#F7930A'
+          });
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+
+          // Connect nearby synaptic nodes
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (dist < 80) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = p.color === p2.color 
+                ? (p.color === '#25AEF3' ? 'rgba(37, 174, 243, 0.18)' : 'rgba(247, 147, 10, 0.18)')
+                : 'rgba(255, 255, 255, 0.08)';
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+      animate();
+    }
+
+    // 7. Active Scrollspy for Fixed Sidebar Links
+    window.addEventListener('scroll', () => {
+      const sections = ['hero', 'introduction', 'about', 'services', 'education', 'videos', 'contact'];
+      let currentSection = 'hero';
+
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 200 && rect.bottom >= 200) {
+            currentSection = id;
+          }
+        }
+      });
+
+      const navLinks = document.querySelectorAll('#sidebar-nav .nav-link');
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href').replace('#', '');
+        if (href === currentSection) {
+          link.classList.add('text-brand-cyan', 'bg-brand-cyan/10', 'border', 'border-brand-cyan/20');
+          link.classList.remove('text-slate-400');
+        } else {
+          link.classList.remove('text-brand-cyan', 'bg-brand-cyan/10', 'border', 'border-brand-cyan/20');
+          link.classList.add('text-slate-400');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
